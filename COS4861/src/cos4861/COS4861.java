@@ -1,22 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cos4861;
+import cos4861.Soundex;
+import cos4861.MinimumDistance; 
+import java.util.Scanner;
 
-/**
- *
- * @author Hlonie
- */
 public class COS4861 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println();
+        // Soundex Algorithm Question 2:
+        System.out.println("========= Soundex Algorithm Question 2 ==============");
+         String[] names = {"Darwin, Ian","Davidson, Greg","Darwent, William","Derwin, Daemon"};
+         for (int i = 0; i< names.length; i++){
+           System.out.println(Soundex.soundex(names[i]) + ' ' + names[i]);
+         }
+         // Minimum Distance Question 3 (3.2):
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter first word\n");
+        String firstWord = in.nextLine();
+        System.out.println("Enter second word\n");
+        String secondWord = in.nextLine();
+       
+        System.out.println("========= Minimum Distance Question 3 (3.2) ==============");
+        int minimumDistance = MinimumDistance.minDistance(firstWord, secondWord);
+        System.out.println("Here is the min distance " + minimumDistance); 
     }
-    
 }
