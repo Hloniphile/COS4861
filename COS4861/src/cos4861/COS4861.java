@@ -12,14 +12,14 @@ public class COS4861 {
          for (int i = 0; i< names.length; i++){
            System.out.println(Soundex.soundex(names[i]) + ' ' + names[i]);
          }
-         // Minimum Distance Question 3 (3.2):
+         // Minimum Distance Question 3 (3.2): 
+        System.out.println("========= Minimum Distance Question 3 (3.2) ==============");
         Scanner in = new Scanner(System.in);
         System.out.println("Enter first word\n");
         String firstWord = in.nextLine();
         System.out.println("Enter second word\n");
         String secondWord = in.nextLine();
        
-        System.out.println("========= Minimum Distance Question 3 (3.2) ==============");
         int minimumDistance = MinimumDistance.minDistance(firstWord, secondWord);
         System.out.println("Here is the min distance " + minimumDistance); 
     }
