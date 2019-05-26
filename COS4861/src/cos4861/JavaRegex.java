@@ -28,8 +28,7 @@ public class JavaRegex {
         while ((st = br.readLine()) != null) {
             System.out.println(st);
         }
-        System.out.println("regex  ............" + regex);
-        System.out.println("st st st ........................" + st);
+        
         System.out.println(Pattern.matches(regex, st));//false (non-digit)  
     }
 }
