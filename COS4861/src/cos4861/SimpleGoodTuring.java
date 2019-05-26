@@ -10,10 +10,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Hlonie
- */
 public class SimpleGoodTuring {
 
     private static final int MIN_INPUT = 5;

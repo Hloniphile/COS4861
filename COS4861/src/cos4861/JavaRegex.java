@@ -14,10 +14,6 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- *
- * @author Hlonie
- */
 public class JavaRegex {
 
     public static void main(String[] args) throws IOException {

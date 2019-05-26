@@ -1,5 +1,4 @@
 package cos4861;
-
 public class Soundex {
 
     public static final char[] MAP = {
