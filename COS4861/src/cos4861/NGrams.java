@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cos4861;
 
 import java.io.File;
@@ -26,7 +22,6 @@ public class NGrams {
 
     /**
      * Brings up chooser for user to select a file
-     *
      * @return Scanner for user selected file, null if file not found
      */
     public static Scanner getScanner() {
@@ -47,29 +42,19 @@ public class NGrams {
     }
 
     /**
-     * Read a file into a string.
-     *
-     * @return returns a string containing all of the text in the file
+     * Read a file into a string and return returns a string containing all of the text in the file
      */
     public String readFile(Scanner input) {
         return input.useDelimiter("\\Z").next();
     }
 
-    /**
-     * Generates random text that is similar to the given reference text.
-     *
-     * @requires ngram > 0
-     * @return returns string whose length is numLetters of randomly selected
-     * characters based on picking representive characters that follow each
-     * ngram characters
-     */
     public String makeNGram(String referenceText, int ngram, int numLetters) {
         String predictor = getRandomSubstring(referenceText, ngram);
         String result = "";
 
         for (int k = 0; k < numLetters; k += 1) {
-            // TODO: get all characters that immediately follow predictor
-            // TODO: pick one character randomly and update predictor
+            // get all characters that immediately follow predictor
+            // pick one character randomly and update predictor
         }
 
         return result;
@@ -86,14 +71,7 @@ public class NGrams {
         // TODO: choose random substring from s
         return s.substring(0, subSize);
     }
-
-    /**
-     * Find all characters that immediately follow toFind in the given string.
-     *
-     * @return a string containing each character that immediately follows
-     * toFind in s
-     */
-    public String getFollowingCharacters(String s, String toFind) {
+     public String getFollowingCharacters(String s, String toFind) {
         String result = "";
 
         // TODO: get each character following toFind in s and add to result
@@ -109,8 +87,7 @@ public class NGrams {
         String input = JOptionPane.showInputDialog("Enter N:", "");
         int n = Integer.parseInt(input);
         String referenceText = model.readFile(getScanner());
-        // generate random text to varying degrees of accuracy
-        System.out.println(n + "-gram");
+        /*generate random text to varying degrees of accuracy */
         for (int k = 0; k <= n; k++) {
             System.out.println("--------");
         }

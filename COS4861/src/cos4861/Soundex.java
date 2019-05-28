@@ -10,27 +10,20 @@ public class Soundex {
 
     /**
      * Convert the given String to its Soundex code.
-     *
      * @return null If the given string can't be mapped to Soundex.
      */
     public static String soundex(String name) {
-
         // Algorithm works on uppercase, therefore the string is converted to upperCase
         String stringNameToUpperCase = name.toUpperCase();
-
         StringBuffer res = new StringBuffer();
         char current, previous = '?';
-
         // Main loop: find up to 4 characters that map.
         for (int i = 0; i < stringNameToUpperCase.length() && res.length() < 4
                 && (current = stringNameToUpperCase.charAt(i)) != ','; i++) {
-
-            // Check to see if the given character is alphabetic.
-            // Text is already converted to uppercase. Algorithm
+            // Check to see if the given character is alphabetic. Text is already converted to uppercase. Algorithm
             // only handles ASCII letters.
             if (current >= 'A' && current <= 'Z' && current != previous) {
                 previous = current;
-
                 // First char is installed unchanged, for sorting.
                 if (i == 0) {
                     res.append(current);

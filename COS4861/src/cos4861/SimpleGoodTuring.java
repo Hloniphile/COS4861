@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cos4861;
 
 import java.io.BufferedReader;
@@ -33,12 +29,6 @@ public class SimpleGoodTuring {
 
     /**
      * Each instance of this class encapsulates the computation of the smoothing
-     * for one probability distribution. The constructor takes two arguments
-     * which are two parallel arrays. The first is an array of counts, which
-     * must be positive and in ascending order. The second is an array of
-     * corresponding counts of counts; that is, for each i, n[i] represents the
-     * number of types which occurred with count r[i] in the underlying
-     * collection. See the documentation for main() for a concrete example.
      */
     public SimpleGoodTuring(int[] r, int[] n) {
         if (r == null) {
@@ -177,12 +167,10 @@ public class SimpleGoodTuring {
     }
 
     private void print() {
-        int i;
-        System.out.println("pZero.....wwwww..........." + pZero);
+        int i; 
         System.out.printf("%6s %6s %8s %8s%n", "r", "n", "p", "p*");
         System.out.printf("%6s %6s %8s %8s%n", "----", "----", "----", "----");
         System.out.printf("%6d %6d %8.4g %8.4g%n", 0, 0, 0.0, pZero);
-        System.out.println("pZero................" + pZero);
         for (i = 0; i < rows; ++i) {
             System.out.printf("%6d %6d %8.4g %8.4g%n", r[i], n[i], 1.0 * r[i] / bigN, p[i]);
         }
@@ -202,12 +190,7 @@ public class SimpleGoodTuring {
         }
     }
 
-    // static methods -------------------------------------------------------------
-    /**
-     * Reads from STDIN a sequence of lines, each containing two integers,
-     * separated by whitespace. Returns a pair of int arrays containing the
-     * values read.
-     */
+    // static methods ------------------------------------------------------------
     private static int[][] readInput() throws Exception {
         List<Integer> rVals = new ArrayList<Integer>();
         List<Integer> nVals = new ArrayList<Integer>();
@@ -242,40 +225,6 @@ public class SimpleGoodTuring {
         return ints;
     }
  
-    /**
-     * The input should contain two integers on each line, separated by
-     * whitespace. The first integer is a count; the second is a count for that
-     * count. The input must be sorted in ascending order, and should not
-     * contain 0s. For example, valid input is:
-     * <p/>
-     *
-     * <pre>
-     *   1 10
-     *   2 6
-     *   3 4
-     *   5 2
-     *   8 1
-     * </pre>
-     *
-     * This represents a collection in which 10 types occur once each, 6 types
-     * occur twice each, 4 types occur 3 times each, 2 types occur 5 times each,
-     * and one type occurs 10 times, for a total count of 52. This input will
-     * produce the following output: </p>
-     *
-     * <pre>
-     *     r      n        p       p*
-     *  ----   ----     ----     ----
-     *     0      0    0.000   0.1923
-     *     1     10  0.01923  0.01203
-     *     2      6  0.03846  0.02951
-     *     3      4  0.05769  0.04814
-     *     5      2  0.09615  0.08647
-     *     8      1   0.1538   0.1448
-     * </pre>
-     *
-     * The last column represents the smoothed probabilities, and the first item
-     * in this column represents the probability assigned to unseen items.
-     */
     public static void main(String[] args) throws Exception {
         int[][] input = readInput();
         SimpleGoodTuring sgt = new SimpleGoodTuring(input[0], input[1]);

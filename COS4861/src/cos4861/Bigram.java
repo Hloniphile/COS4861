@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cos4861;
 
 import java.io.BufferedReader;
@@ -20,12 +15,7 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- *
- * @author Hlonie
- */
 public class Bigram {
-    
     public static void main(String [] args) throws FileNotFoundException, IOException
     {
         String longCorpara = "I am simple string to test the code written in Java programming language."
@@ -47,11 +37,11 @@ public class Bigram {
             {
                 if(firstString.isEmpty())
                     firstString = iteration.nextToken();
-                secondString = iteration.nextToken();
-                thirdString = firstString + " " + secondString;
-                bigrams.add(thirdString);
-                firstString = secondString;
-                secondString = "";
+                    secondString = iteration.nextToken();
+                    thirdString = firstString + " " + secondString;
+                    bigrams.add(thirdString);
+                    firstString = secondString;
+                    secondString = "";
             }
 
         }

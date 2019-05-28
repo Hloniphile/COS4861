@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package cos4861;
+ package cos4861;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -28,6 +23,7 @@ public class Chatbot {
                 if (matchedString.find()) {
                     System.out.println("MATCHED");
                     responseBack = listString[i].toUpperCase();
+                    System.out.println(">>" + responseBack);
                 } else {
                     System.out.println("NOT MATCHED");
                 }
@@ -39,7 +35,7 @@ public class Chatbot {
         System.out.println("Enter your string");
         Scanner in = new Scanner(System.in);
         String firstWord = in.nextLine();
-        System.out.println("Entered  string : " + firstWord.toUpperCase());
+        System.out.println("** " + firstWord.toUpperCase());
         Eliza(firstWord);
     }
 }
